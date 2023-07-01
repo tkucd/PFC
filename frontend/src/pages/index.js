@@ -43,42 +43,42 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container">
+      <div>
           <h1>材料入力</h1>
           <form onSubmit={doSubmit}>
-              <p>冷蔵庫の中身の使いたい食材を入力してください（食材ごとに句点を入れてください）</p>
-              <textarea name="input" className="form-control" placeholder="例）じゃがいも、にんじん、牛乳" onChange={doChangeIngredients} />
-              <div className="form-group">
-                  <input type="checkbox" className="form-check-input" onChange={doChangePFC} id="pfc-check"/>
+              <label className='block mb-2 text-sm font-medium text-gray-900 dark:text-white'>冷蔵庫の中身の使いたい食材を入力してください（食材ごとに句点を入れてください）</label>
+              <textarea className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" name="input" placeholder="例）じゃがいも、にんじん、牛乳" onChange={doChangeIngredients} />
+              <div>
+                  <input type="checkbox" onChange={doChangePFC} id="pfc-check"/>
                   <label htmlFor="fpc-check">PFCを気にする</label>
               </div>
               {pfc && 
-                <div className='container'>
-                    <div className='form-group'>
+                <div>
+                    <div>
                         <label htmlFor="height">身長：</label>
                         <input type="text" id="height" placeholder="170" />
                     </div>
-                    <div className='form-group'>
+                    <div>
                         <label htmlFor="weight">体重：</label>
                         <input type="text" id="weight" placeholder="65" />
                     </div>
                 </div>}
-              <button className="btn btn-primary">検索</button>
+              <button className='bg-blue-500 hover:bg-blue-400 text-white rounded px-4 py-2'>検索</button>
           </form>
           {menu.length != 0 && 
             <div>
                 <hr/>
                 <h1>献立候補</h1>
                 {menu.map((value, index) => 
-                  <div key={index} className='card'>
-                    <div className='card-body'>
-                      <h5 className='card-title'>「{value.dish}」</h5>
-                      <h6 className='card-subtitle'>材料：{value.ingredients}</h6>
-                      <p className='card-text'>レシピ：{value.recipe}</p>
+                  <div key={index}>
+                    <div>
+                      <h5>「{value.dish}」</h5>
+                      <h6>材料：{value.ingredients}</h6>
+                      <p>レシピ：{value.recipe}</p>
                     </div>
                   </div>
                 )}
-                <button className="btn btn-primary">他の候補を教えて</button>
+                <button>他の候補を教えて</button>
             </div>}
       </div>
     </>
