@@ -1,5 +1,5 @@
 const chatGPT = (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     return res.status(200).json({menu:[
         {
           "ingredients": ["トマト", "鶏肉", "ブロッコリー", "ニンジン"],

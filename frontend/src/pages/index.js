@@ -70,8 +70,12 @@ export default function Home() {
                 <hr/>
                 <h1>献立候補</h1>
                 {menu.map((value, index) => 
-                  <div key={index}>
-                    <p>{value.dish}</p>
+                  <div key={index} className='card'>
+                    <div className='card-body'>
+                      <h5 className='card-title'>「{value.dish}」</h5>
+                      <h6 className='card-subtitle'>材料：{value.ingredients}</h6>
+                      <p className='card-text'>レシピ：{value.recipe}</p>
+                    </div>
                   </div>
                 )}
                 <button className="btn btn-primary">他の候補を教えて</button>
