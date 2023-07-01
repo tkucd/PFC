@@ -34,7 +34,3 @@ def get_menu(ingredients):
         ],
     )
     return res["choices"][0]["message"]["content"]
-
-if __name__ == "__main__":
-    ingredients = "トマト、鶏肉、ブロッコリー、ニンジン"
-    print(get_menu(ingredients))

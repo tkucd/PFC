@@ -10,7 +10,7 @@ export default function Home() {
   const [menu, setMenu] = useState([])
 
   const doSubmit = (e) => {
-      fetch('http://localhost:3000/api/chatgpt', {
+      fetch('http://localhost:5000/', {
           method: "POST",
           headers: {
               'Content-Type': 'application/json',

@@ -1,9 +1,11 @@
 from flask import Flask
 from flask import request
+from flask_cors import CORS
 from menu import get_menu
 
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/", methods=["GET"])
@@ -21,4 +23,4 @@ def get_items():
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(host='0.0.0.0:3000', port=3000)
+    app.run(host='127.0.0.1', port=5000)
