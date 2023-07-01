@@ -1,5 +1,25 @@
-import openai
 from flask import Flask
+from flask import request, make_response, jsonify
 
 
-openai.api_key = <OPENAI-API-KEY>
+app = Flask(__name__)
+
+@app.route("/", methods=['GET'])
+def index():
+    return "text parser:)"
+
+
+@app.route("/wakati", methods=['GET','POST'])
+def parse():
+    #print(request.get_json()) # -> {'post_text': 'テストテストテスト'}
+    data = request.get_json()
+    text = data['post_text']
+
+
+    response = {'result': res}
+    #print(response)
+    return make_response(jsonify(response))
+
+if __name__ == "__main__":
+    app.debug = True
+    app.run(host='127.0.0.1', port=5000)
