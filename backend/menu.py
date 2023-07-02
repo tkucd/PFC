@@ -1,6 +1,6 @@
 import openai
 
-openai.api_key = "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"
+openai.api_key = "API_KEY"
 
 def get_menu(ingredients):
     res = openai.ChatCompletion.create(
