@@ -1,9 +1,8 @@
 const Footer = () => {
     return (
-        <div>
-            <hr/>
-            <p>チームPFC</p>
-        </div>
+        <footer className="footer">
+            <p>© team-PFC 2023</p>
+        </footer>
     )
 }
 
