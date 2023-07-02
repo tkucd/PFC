@@ -1,11 +1,10 @@
 // import Link from "next/link"
+import Image from 'next/image'
 
 const Header = () => {
     return (
         <div className="bg-primary text-white display-4">
-            {/* <Link href="/">献立メーカー（仮）</Link> */}
-            <h1>献しぇるじゅ</h1>
-            {/* <Link href="/login">Login</Link> */}
+            <Image src="/logo.png" width={128} height={64} alt="ロゴ画像" />
         </div>
     )
 }
