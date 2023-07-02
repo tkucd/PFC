@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useState } from "react"
-import { Inter } from '@next/font/google'
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -43,11 +44,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container">
-          <h1>材料入力</h1>
+      <Header />
+      <div className="container m-5">
+          {/* <h1>材料入力</h1> */}
           <form onSubmit={doSubmit}>
-              <p>冷蔵庫の中身の使いたい食材を入力してください（食材ごとに句点を入れてください）</p>
-              <textarea name="input" className="form-control" placeholder="例）じゃがいも、にんじん、牛乳" onChange={doChangeIngredients} />
+              <div>
+                <label HTMLFor="input" className='form-label'>冷蔵庫の中身の使いたい食材を入力してください（食材ごとに句点を入れてください）</label>
+                <textarea id="input" className="form-control" placeholder="例）じゃがいも、にんじん、牛乳" onChange={doChangeIngredients} />
+              </div>
               <div className="form-group">
                   <input type="checkbox" className="form-check-input" onChange={doChangePFC} id="pfc-check"/>
                   <label htmlFor="fpc-check">PFCを気にする</label>
@@ -81,6 +85,7 @@ export default function Home() {
                 <button className="btn btn-primary">他の候補を教えて</button>
             </div>}
       </div>
+      <Footer />
     </>
   )
 }
